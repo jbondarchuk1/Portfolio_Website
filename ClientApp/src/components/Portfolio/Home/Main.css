@@ -1,0 +1,29 @@
+.app{
+    margin: 0;
+    padding: 0;
+}
+.Main{
+    color: white;
+    text-align: center;
+    height: 130%;
+    background: #191919;
+    display: block;
+    align-items: center;
+}
+section {
+    height: 70em;
+    padding-top: 15em;
+    margin: 0 auto;
+    max-width: 70%;
+    min-width: 40%;
+}
+#mainHeader{
+    font-size: 3em;
+    margin: 0 auto;
+    padding: 1em;
+}
+#body1{
+    line-height: 2em;
+    font-size: 1.1em;
+    font-weight: 100;
+}

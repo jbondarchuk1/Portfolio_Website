@@ -1,0 +1,15 @@
+﻿.node{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.node-start{
+    background-color: green;
+}
+.node-end{
+    background-color: red;
+}
+.isWall{
+    background-color: black;
+}

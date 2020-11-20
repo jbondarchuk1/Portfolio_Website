@@ -1,0 +1,36 @@
+.resume{
+    height: 160vh;
+    width: 100%;
+    background-color: #444;
+    display: block;
+}
+
+.resumeWrapper{
+    width: 100%;
+    display: block;
+    justify-content: center;
+}
+
+.iframeWrapper{
+    width: 100%;
+    display: block;
+    padding-top: 7em;
+    margin-bottom: 5em;
+    margin: auto;
+}
+
+.iframeWrapper h1{
+    font-size: 3em;
+    width: 16%;
+    display: block;
+    margin:  0 auto;
+    color: white;
+    justify-self: center;
+    margin-bottom: 1em;
+}
+
+.resume iframe{
+    display: block;
+    margin-top: 2em;
+    margin: auto;
+}
