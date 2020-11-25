@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ReactTest2.Controllers
+namespace PersonalWebsite.Net.Controllers
 {
     public class Email
     {

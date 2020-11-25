@@ -7,40 +7,28 @@ function Contact () {
         <div className='contact'>
             <div className="login-box">
             <h2>CONTACT</h2>
-            <form>
+            <form method='POST'>
                 <div className="user-box">
-                    <input type="text" name="" required="" />
+                    <input type="text" name="Name" required="true" />
                     <label>Name</label>
                 </div>
                 <div className="user-box">
-                    <input type="text" name="" required="" />
+                    <input type="text" name="EmailAddress" required="true" />
                     <label>Email address</label>
                 </div>
                 <div className="user-box">
-                    <input type="text" name="" required="" />
+                    <input type="text" name="Subject" required="true" />
                     <label>Subject</label>
                 </div>
                 <div className="user-box">
-                    <textarea rows="4" cols="40"></textarea>
+                    <textarea rows="4" cols="40" name="Message" required="true"></textarea>
                     <label>Message</label>
                 </div>
-                <a href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Submit
-                </a>
+                <input type='submit' href='/contact' id='a'/>
             </form>
             </div>
         </div>
         )
     }
-//     return(
-//         <div>
-//             {layoutBody}
-//         </div>
-//     )
-// }
 
 export default Contact;

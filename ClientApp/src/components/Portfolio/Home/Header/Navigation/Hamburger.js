@@ -17,17 +17,17 @@ function Hamburger() {
 
     return (
     <div className="Hamburger">
-            <NavLink tag={Link} to='/' id='NavLink'>Home</NavLink>
+            <Link tag={Link} to='/' id='NavLink'>Home</Link>
             {/* <img src={HamburgerSVG} onClick={handleDropDown}/> */}
             <div className={`nav-icon ${navState[dropDown]}`} onClick={handleDropDown}>
                 <div></div>
             </div>
         <div className={dropDownCss[dropDown]}>
             <ul>
-                <li><NavLink tag={Link} to='/' id='NavLink'>Jason Bondarchuk</NavLink></li>
-                <li><NavLink tag={Link} to='/resume' id='NavLink'>Resume</NavLink></li>
-                <li><NavLink tag={Link} to='/projects' id='NavLink'>Projects</NavLink></li>
-                <li><NavLink tag={Link} to='/contact' id='NavLink'>Contact</NavLink></li>
+                <li><Link tag={Link} to='/' id='NavLink'>Jason Bondarchuk</Link></li>
+                <li><Link tag={Link} to='/resume' id='NavLink'>Resume</Link></li>
+                <li><Link tag={Link} to='/projects' id='NavLink'>Projects</Link></li>
+                <li><Link tag={Link} to='/contact' id='NavLink'>Contact</Link></li>
             </ul>
         </div>
     </div>

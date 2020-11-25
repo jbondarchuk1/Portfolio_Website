@@ -67,15 +67,19 @@ transform: translateY(12px) rotate(135deg);
     text-align: right;
     list-style-type: none;
     background-color: white;
+    height: 100%;
 }
 .Hamburger li {
-    width: auto;
+    width: 100%;
+    display: block;
+    float: right;
     padding: 1.7em;
     font-size: 1.3em;
     background-color: white;
 }
 
 .Hamburger li #NavLink{
+    display: block;
     float: right;
     text-align: right;
     padding: 0.5em;
