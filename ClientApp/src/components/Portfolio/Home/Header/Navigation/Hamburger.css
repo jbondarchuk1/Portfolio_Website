@@ -7,7 +7,7 @@
     position: fixed;
 }
 
-.Hamburger #a{
+.Hamburger a{
     width: auto;
     left: 5%;
     position: fixed;
@@ -17,12 +17,10 @@
     padding: 1em;
     color: black;
     padding: 15px;
-    margin-top: 1.5px;
-    margin-bottom: 0;
-    margin-left: 0px;
+    margin-top: 2px;
     border-radius: 7px;
 }
-.Hamburger #a:hover{
+.Hamburger a:hover{
     background-color: rgba(31, 31, 31, 0.438);
 }
 /* messing around here*/
@@ -66,23 +64,26 @@ transform: translateY(12px) rotate(135deg);
 }
 
 .Hamburger ul{
+    text-align: right;
     list-style-type: none;
     background-color: white;
 }
-.Hamburger li{
-    margin-top: 2em;
-    margin-right: 2em;
-    margin-left: 0;
+.Hamburger li {
+    width: auto;
+    padding: 1.7em;
     font-size: 1.3em;
     background-color: white;
 }
 
-.Hamburger li a{
+.Hamburger li #NavLink{
+    float: right;
+    text-align: right;
+    padding: 0.5em;
     text-decoration: none;
     color: #333;
-    padding: 1em;
     border-radius: .2em;
 }
+
 .Hamburger li a:hover{
     background-color: rgba(31, 31, 31, 0.438);
 }

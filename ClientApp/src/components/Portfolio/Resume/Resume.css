@@ -1,5 +1,5 @@
 .resume{
-    height: 160vh;
+    height: 76em;
     width: 100%;
     background-color: #444;
     display: block;
@@ -14,18 +14,18 @@
 .iframeWrapper{
     width: 100%;
     display: block;
-    padding-top: 7em;
+    padding-top: 8em;
     margin-bottom: 5em;
     margin: auto;
 }
 
 .iframeWrapper h1{
     font-size: 3em;
-    width: 16%;
+    text-align: center;
+    width: auto;
     display: block;
-    margin:  0 auto;
+    margin:  auto;
     color: white;
-    justify-self: center;
     margin-bottom: 1em;
 }
 
@@ -34,3 +34,13 @@
     margin-top: 2em;
     margin: auto;
 }
+
+@media only screen and (max-width: 680px) {
+    .resume iframe {
+      width: 320px;
+      height: 410px;
+    }
+    .resume{
+        height: 48em;
+    }
+  }

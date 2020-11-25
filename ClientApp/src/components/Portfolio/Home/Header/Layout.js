@@ -15,13 +15,13 @@ function Layout(props) {
         setMobileView(1);
       }else setMobileView(0)
     }
-
-    if (mobileView == 1){
+    // const mobileView = 1;
+    if (mobileView === 1){
       return (
         <div>
             <Hamburger />
             <div>
-                {props.children(mobileView)}
+                {props.children}
             </div>
             <Footer />
         </div>
@@ -32,7 +32,7 @@ function Layout(props) {
         <div>
             <Navigation />
             <div>
-                {props.children(mobileView)}
+                {props.children}
             </div>
             <Footer />
         </div>

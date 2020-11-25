@@ -16,10 +16,44 @@ const Algorithm = () => {
     const [Grid, setGrid] = useState([]);
     const [Path, setPath] = useState([]);
     const [VisitedNodes, setVisitedNodes] = useState([]);
+    const [mouseIsPressed, setMouseIsPressed] = useState(false);
 
     useEffect(() => {
         initializeGrid();
     }, []);
+
+    const handleMouseDown = (row,col) => {
+        newGridWithWalls(Grid, row, col);
+        setMouseIsPressed(true);
+    }
+    const handleMouseEnter = (row,col) => {
+        if (!mouseIsPressed) return
+
+        newGridWithWalls(Grid, row, col);
+    }
+    const handleMouseUp = () =>{
+        setMouseIsPressed(false);
+    }
+
+    const newGridWithWalls = (grid, row, col) => {
+        const newGrid = grid.slice();
+        const node = newGrid[row][col];
+        const newNode = node;
+        newNode.isWall = !node.isWall;
+        node.isWall = newNode.isWall;
+
+        newGrid[row][col] = newNode;
+        setGrid(newGrid);
+        
+        const startNode = grid[NODE_START_ROW][NODE_START_COL]
+        const endNode = grid[NODE_END_ROW][NODE_END_COL]
+        // need to handle new walls before this point
+        startNode.isWall = false;
+        endNode.isWall = false;
+        let path = Astar(startNode, endNode); 
+        setPath(path.path);
+        setVisitedNodes(path.visitedNodes);
+    }
 
     // creates grid
     const initializeGrid = () => {
@@ -28,16 +62,20 @@ const Algorithm = () => {
         for (let i = 0; i < rows; i++){
             grid[i] = new Array(cols);
         }
-        createSpot(grid);
-        setGrid(grid);
-        addNeighbors(grid);
+        
+        createSpot(grid); // every row,column becomes a spot object
+        setGrid(grid); // state grid becomes the initialized grid
+        addNeighbors(grid); // each spot object fills its this.neighbors [] array
+
         const startNode = grid[NODE_START_ROW][NODE_START_COL]
         const endNode = grid[NODE_END_ROW][NODE_END_COL]
-        let path = Astar(startNode, endNode);
+        // need to handle new walls before this point
         startNode.isWall = false;
         endNode.isWall = false;
+        let path = Astar(startNode, endNode); 
         setPath(path.path);
         setVisitedNodes(path.visitedNodes);
+
     }
 
     // add neighbors
@@ -70,9 +108,9 @@ const Algorithm = () => {
 
         this.isWall = false;
         this.setWall = () =>{
-            if (Math.random(1) < 0.2) {
-                this.isWall = true;
-            }
+            // if (Math.random(1) < 0.2 && this.isStart == false && this.isEnd == false) {
+            //     this.isWall = true;
+            // }
         }
         this.setWall();
 
@@ -96,7 +134,7 @@ const Algorithm = () => {
     }
 
     // grid with nodes
-    const gridWithNodes = (
+    let gridWithNodes = (
         <div>
             {Grid.map((row, rowIdx) => {
                 return(
@@ -104,9 +142,19 @@ const Algorithm = () => {
                         {row.map((col, colIdx) => {
                             const isStart = col.isStart;
                             const isEnd = col.isEnd;
-
                             const isWall = col.isWall;
-                            return <Node key={colIdx} isStart={isStart} isEnd={isEnd} row={rowIdx} col={colIdx} isWall={isWall}/>
+                            return <Node 
+                            key={colIdx}
+                            isStart={isStart} 
+                            isEnd={isEnd} 
+                            row={rowIdx} 
+                            col={colIdx} 
+                            isWall={isWall}
+                            mouseIsPressed={mouseIsPressed}
+                            onMouseDown={(row,col) => handleMouseDown(row,col)}
+                            onMouseEnter={(row,col) => handleMouseEnter(row,col)}
+                            onMouseUp={() => handleMouseUp()}
+                            />
                         })}
                     </div>
                 )
@@ -122,11 +170,15 @@ const Algorithm = () => {
             }, 10*i)
         }
     }
+    let visualizing = false;
     const visualizePath = () => {
+
+        visualizing = true;
         for(let i=0; i <= VisitedNodes.length; i++){
             if (i === VisitedNodes.length){
                 setTimeout(() =>{
                     visualizeShortestPath(Path)
+                    visualizing = false;
                  }, 20*i)
             }else{
                 setTimeout(() => {
@@ -137,20 +189,43 @@ const Algorithm = () => {
         }
     }
 
+    const resetGrid = (grid) => {
+        if (visualizing == false){
+            for (let i = 0; i < rows; i++){
+                for (let j = 0; j < cols; j++) {
+                    let node = grid[i][j];
+                    document.getElementById(`node-${node.x}-${node.y}`).className = "node";
+                    if (node.isEnd){
+                        document.getElementById(`node-${node.x}-${node.y}`).className = "node node-end";
+                    }
+                    else if (node.isStart){
+                        document.getElementById(`node-${node.x}-${node.y}`).className = "node node-start";
+                    }
+                    grid[i][j].setWall();
+                    gridWithNodes = gridWithNodes;
+                }
+            }
+        }
+    }
+
     console.log(Path);
-    const myalgorithm = () =>{
     return (
         <div className='WrapperWrapper'>
             <div className="Wrapper">
                 <h1>Pathfinding Visualizer</h1>
-                <button onClick={visualizePath}>Visualize Path</button>
+                <button onClick={visualizePath}>Visualize Path</button><br/>
+                <button onClick={() => {
+                    if (visualizing == false){
+                        setGrid([])
+                        setPath([])
+                        setVisitedNodes([])
+                        resetGrid(Grid)
+                        initializeGrid()
+                    }
+                }}>reset</button>
                 {gridWithNodes}
             </div>
         </div>
-    )
-    }
-    return (
-        <Layout children={myalgorithm} />
-    )
+        )
 }
-export default Algorithm
+export default Algorithm;

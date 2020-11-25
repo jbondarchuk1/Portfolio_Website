@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 import './Navigation.css';
 
 // me just messing around with state
@@ -29,13 +30,13 @@ function Navigation() {
       <nav className={scrollClasses[navStyle][0]}>
         <div className={scrollClasses[0][1]}>
             <ul className={scrollClasses[navStyle][2]}>
-                <li><a href='/'>Jason Bondarchuk</a></li>
-                <li><a href='/Resume'>Resume</a></li>
-                <li><a href='/Projects'>Projects</a></li>
+                <li><Link to='/'>Jason Bondarchuk</Link></li>
+                <li><Link to='/Resume'>Resume</Link></li>
+                <li><Link to='/Projects'>Projects</Link></li>
             </ul>
 
             <ul className={scrollClasses[navStyle][3]}>
-                <li><a href='/Contact'>Contact</a></li>
+                <li><Link to='/Contact'>Contact</Link></li>
             </ul>
         </div>
       </nav>

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Header.css';
 import Icons from './Icons'
-import Layout from './Layout';
 
 
 const classForHeader = [
@@ -10,13 +9,13 @@ const classForHeader = [
 ]
 
 function Header(props) {
-  let headerBody = (mobileView) => {
+  // let headerBody = (mobileView=0) => {
     return(
       <div>
           <div className='headerCss'>
-            <div className={classForHeader[mobileView][0]}>
-              <h1 className={classForHeader[mobileView][1]}>JASON BONDARCHUK</h1><br/><br /> <br />
-              <p className={classForHeader[mobileView][2]}>
+            <div className={classForHeader[0][0]}>
+              <h1 className={classForHeader[0][1]}>JASON BONDARCHUK</h1><br/><br /> <br />
+              <p className={classForHeader[0][2]}>
                   Self-taught software developer <br />just trying to make an impact in the world<br/><br/>
                   自分でコーディングと日本語を勉強してる。<br />いつか、僕の夢は現実になる。
               </p>
@@ -28,11 +27,11 @@ function Header(props) {
     )
   } 
 
-    return(
-      <div>
-        <Layout children={headerBody} />
-      </div>
-    )
-}
+//     return(
+//       <div>
+//         {headerBody}
+//       </div>
+//     )
+// }
   
   export default Header;

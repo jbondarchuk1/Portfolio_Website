@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import Layout from '../Home/Header/Layout';
-import Footer from '../Home/Footer';
+import React from 'react';
 import './Contact.css';
 
 function Contact () {
 
-    const layoutBody = () => {
         return (
         <div className='contact'>
             <div className="login-box">
@@ -39,11 +36,11 @@ function Contact () {
         </div>
         )
     }
-    return(
-        <div>
-            <Layout children={layoutBody}/>
-        </div>
-    )
-}
+//     return(
+//         <div>
+//             {layoutBody}
+//         </div>
+//     )
+// }
 
 export default Contact;

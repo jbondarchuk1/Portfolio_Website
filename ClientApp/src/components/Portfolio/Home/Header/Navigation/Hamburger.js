@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'reactstrap'
+import { Link } from 'react-router-dom';
 import './Hamburger.css';
 
 
@@ -15,17 +17,17 @@ function Hamburger() {
 
     return (
     <div className="Hamburger">
-            <a href='/' id='a'>Home</a>
+            <NavLink tag={Link} to='/' id='NavLink'>Home</NavLink>
             {/* <img src={HamburgerSVG} onClick={handleDropDown}/> */}
             <div className={`nav-icon ${navState[dropDown]}`} onClick={handleDropDown}>
                 <div></div>
             </div>
         <div className={dropDownCss[dropDown]}>
             <ul>
-                <li><a href='/'>Jason Bondarchuk</a></li>
-                <li><a href='/Resume'>Resume</a></li>
-                <li><a href='/Projects'>Projects</a></li>
-                <li><a href='/Contact'>Contact</a></li>
+                <li><NavLink tag={Link} to='/' id='NavLink'>Jason Bondarchuk</NavLink></li>
+                <li><NavLink tag={Link} to='/resume' id='NavLink'>Resume</NavLink></li>
+                <li><NavLink tag={Link} to='/projects' id='NavLink'>Projects</NavLink></li>
+                <li><NavLink tag={Link} to='/contact' id='NavLink'>Contact</NavLink></li>
             </ul>
         </div>
     </div>
