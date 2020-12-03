@@ -14,7 +14,7 @@ namespace PersonalWebsite.Net.Controllers
     public class EmailController : ControllerBase
     {
         [HttpPost]
-        public IActionResult Contact([Bind("Name, EmailAddress, Subject, Message")]Email email)
+        public IActionResult Contact([Bind("Name, EmailAddress, Subject, Message")] Email email)
         {
             if (email == null)
             {
@@ -38,7 +38,7 @@ namespace PersonalWebsite.Net.Controllers
             var from = new EmailAddress(EmailAddress, Name);
             var subject = Subject;
             var to = new EmailAddress("jason.r.bondarchuk@gmail.com");
-            var plainTextContent =  $"Name: {Name}\n" +
+            var plainTextContent = $"Name: {Name}\n" +
                                     $"Email: {EmailAddress}\n" +
                                     $"Subject: {Subject}\n" +
                                     $"Message: {Message}\n";

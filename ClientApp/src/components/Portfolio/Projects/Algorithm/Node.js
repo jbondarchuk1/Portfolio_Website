@@ -2,7 +2,13 @@
 import './Node.css';
 
 const Node = (props) => {
-    const classes =  props.isEnd==true ? "node-end": props.isWall==true ? "isWall" : props.isStart==true ? "node-start" : "";
+    const classes =  
+        props.isFinish==true ?
+        "node-finish":
+        props.isWall==true ?
+        "node-wall" :
+        props.isStart==true ?
+        "node-start" : "";
 
     return ( 
         <div 
@@ -11,9 +17,7 @@ const Node = (props) => {
         onMouseDown={() => props.onMouseDown(props.row, props.col)}
         onMouseEnter={() => props.onMouseEnter(props.row, props.col)}
         onMouseUp={() => props.onMouseUp()}>
-
         </div>
-        
     )
 }
 export default Node;

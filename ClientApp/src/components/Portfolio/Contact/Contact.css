@@ -1,5 +1,6 @@
 .contact{
-    height: 49em;
+    height: 100vh;
+    min-height: 60em;
     width: 100%;
     background-color: #444;
 }
@@ -62,15 +63,15 @@
     border: 1px solid black;
     margin: 0 auto;
 }
-/*copy pasted all the other css to try this out*/
+
 .login-box {
     display: block;
     position: absolute;
-    top: 55%;
+    top: 30em;
     left: 50%;
-    width: 400px;
+    width: 27em;
     padding: 40px;
-    height: 80%;
+    height: 37em;
     transform: translate(-50%, -50%);
     background: rgba(0,0,0,.5);
     box-sizing: border-box;
