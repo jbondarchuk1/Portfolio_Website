@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Hamburger.css';
 
 
-function Hamburger() {
+function Hamburger(props) {
     const navState = ['', 'open']
     const dropDownCss = ['dropDownList', 'Show']
     const [dropDown, setDropDown] = useState(0);
@@ -14,23 +14,30 @@ function Hamburger() {
         setDropDown(1);
         else setDropDown(0)
     };
+    const resetDropDown = () =>{
+        setDropDown(0)
+    };
 
     return (
-    <div className="Hamburger">
-            <Link tag={Link} to='/' id='NavLink'>Home</Link>
-            {/* <img src={HamburgerSVG} onClick={handleDropDown}/> */}
-            <div className={`nav-icon ${navState[dropDown]}`} onClick={handleDropDown}>
-                <div></div>
+        <div>
+            <div className="Hamburger">
+                    <Link tag={Link} to='/' id='NavLink'>Home</Link>
+                    <div className={`nav-icon ${navState[dropDown]}`} onClick={handleDropDown}>
+                        <div></div>
+                    </div>
+                <div className={dropDownCss[dropDown]}>
+                    <ul>
+                        <li><Link tag={Link} to='/' id='NavLink'>Jason Bondarchuk</Link></li>
+                        <li><Link tag={Link} to='/resume' id='NavLink'>Resume</Link></li>
+                        <li><Link tag={Link} to='/projects' id='NavLink'>Projects</Link></li>
+                        <li><Link tag={Link} to='/contact' id='NavLink'>Contact</Link></li>
+                    </ul>
+                </div>
             </div>
-        <div className={dropDownCss[dropDown]}>
-            <ul>
-                <li><Link tag={Link} to='/' id='NavLink'>Jason Bondarchuk</Link></li>
-                <li><Link tag={Link} to='/resume' id='NavLink'>Resume</Link></li>
-                <li><Link tag={Link} to='/projects' id='NavLink'>Projects</Link></li>
-                <li><Link tag={Link} to='/contact' id='NavLink'>Contact</Link></li>
-            </ul>
+            <div className="children" onClick={resetDropDown}>
+                {props.children}
+            </div>
         </div>
-    </div>
     );
   }
   

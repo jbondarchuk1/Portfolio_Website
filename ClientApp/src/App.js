@@ -9,6 +9,7 @@ import Main from './components/Portfolio/Home/Main';
 import Contact from './components/Portfolio/Contact/Contact';
 import Projects from './components/Portfolio/Projects/Projects';
 import Resume from './components/Portfolio/Resume/Resume';
+import Project from './components/Portfolio/Projects/Project';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -19,10 +20,11 @@ export default class App extends Component {
           <Layout>
             <Route exact path='/' component={Main} />
             <Route path='/Contact' component={Contact} />
-            <Route path='/Projects' component={Visualizer} />
+            <Route path='/Projects' component={Projects} />
             <Route path='/Resume' component={Resume}/>
             <Route path='/Visualizer' component={Visualizer} />
-          </Layout>  
+            <Route path='/Project' component={Project} />
+          </Layout> 
       </Switch>
     );
   }

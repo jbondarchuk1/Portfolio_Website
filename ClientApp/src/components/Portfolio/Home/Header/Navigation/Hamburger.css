@@ -18,10 +18,11 @@
     color: black;
     padding: 15px;
     margin-top: 2px;
-    border-radius: 7px;
+    border-radius: 1px;
+    transition: 0.3s;
 }
 .Hamburger a:hover{
-    background-color: rgba(31, 31, 31, 0.438);
+    background-color: rgba(100, 100, 100, 0.438);
 }
 /* messing around here*/
 .Hamburger img{
@@ -68,28 +69,32 @@ transform: translateY(12px) rotate(135deg);
     list-style-type: none;
     background-color: white;
     height: 100%;
+    bottom: 1em;
+    overflow: hidden;
 }
 .Hamburger li {
-    width: 100%;
+    text-align: center;
+    width: 130%;
     display: block;
     float: right;
-    padding: 1.7em;
+    margin: 0.2em 0 3.7em 0;
     font-size: 1.3em;
     background-color: white;
 }
 
 .Hamburger li #NavLink{
     display: block;
-    float: right;
-    text-align: right;
+    text-align: center;
     padding: 0.5em;
     text-decoration: none;
     color: #333;
-    border-radius: .2em;
+    border-radius: 2px;
+    width: 100%;
+    padding-right: 1.5em;
 }
 
 .Hamburger li a:hover{
-    background-color: rgba(31, 31, 31, 0.438);
+    background-color: rgba(100, 100, 100, 0.438);
 }
 
 .dropDownList{

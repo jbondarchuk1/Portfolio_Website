@@ -1,0 +1,61 @@
+.project{
+    text-align: center;
+    background-color: rgba(121, 155, 189, 0.644);
+    width: 45em;
+    padding: 1em 5em 3em 5em;
+    margin: 2em auto;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.project:hover{
+    background-color: rgba(72, 209, 205, 0.534);
+}
+.project img{
+    border-radius: 4px;
+    color: white;
+    display: inline;
+}
+.project h1{
+    color: rgb(242, 255, 253);
+    font-size: 1.7em;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    margin: 1em 0.2em;
+}
+.project h2{
+    color: rgba(242, 247, 232, 0.932);
+    font-size: 1.4em;
+}
+.project h3{
+    color: rgba(227, 248, 244, 0.973);
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+.project a{
+    display: block;
+    padding: 1em;
+    background-color: mediumaquamarine;
+    border-radius: 3px;
+    margin: 2em;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: .3s;
+}
+.project a:hover{
+    background-color: mediumseagreen;
+    text-decoration: underline;
+    color: white;
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .project{
+        width: 23em;
+        padding: 1em 2.5em;
+    }
+    .project img{
+        width: 250px;
+        height: 150px;
+        margin: 1em auto;
+    }
+}

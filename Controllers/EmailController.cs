@@ -24,7 +24,6 @@ namespace PersonalWebsite.Net.Controllers
                             $"Email: {email.EmailAddress}\n" +
                             $"Subject: {email.Subject}\n" +
                             $"Message: {email.Message}\n");
-            Debug.WriteLine("poop");
 
             Execute(email.Name, email.EmailAddress, email.Subject, email.Message).Wait();
 
@@ -33,6 +32,7 @@ namespace PersonalWebsite.Net.Controllers
 
         static async Task Execute(string Name, string EmailAddress, string Subject, string Message)
         {
+            // put key in env variable
             var apiKey = "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";
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress(EmailAddress, Name);

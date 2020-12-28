@@ -19,10 +19,11 @@ function Layout(props) {
     if (mobileView === 1){
       return (
         <div>
-            <Hamburger />
-            <div>
-                {props.children}
-            </div>
+            <Hamburger>
+              <div>
+                  {props.children}
+              </div>
+            </Hamburger>
             <Footer />
         </div>
       )}
