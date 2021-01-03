@@ -31,7 +31,7 @@ const projectData = {
   "Japanese Spaced Repetition System",
   "C#/ASP.NET MVC",
   "Full-featured full-stack system with login, authentication, email verification and authorization. Renders tabular vocabulary data to the client on specified dates as per the spaced repetition algorithm.", 
-  null, // for now null, but make sure to link this when we host this project; change to ["https://url.com", true]
+  "http://srsprogrammvc-dev.us-east-2.elasticbeanstalk.com/", // for now null, but make sure to link this when we host this project; change to ["https://url.com", true]
   "https://github.com/jbondarchuk1/SRSProgramMultiplayerTrial"
   ],
   algorithm: [
