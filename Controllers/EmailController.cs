@@ -35,7 +35,7 @@ namespace PersonalWebsite.Net.Controllers
             // put key in env variable
             var apiKey = "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";
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress(EmailAddress, Name);
+            var from = new EmailAddress("jason.r.bondarchuk@gmail.com", Name);
             var subject = Subject;
             var to = new EmailAddress("jason.r.bondarchuk@gmail.com");
             var plainTextContent = $"Name: {Name}\n" +
