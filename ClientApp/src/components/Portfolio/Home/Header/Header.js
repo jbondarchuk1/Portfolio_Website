@@ -9,7 +9,6 @@ const classForHeader = [
 ]
 
 function Header(props) {
-  // let headerBody = (mobileView=0) => {
     return(
       <div>
           <div className='headerCss'>
@@ -25,13 +24,6 @@ function Header(props) {
         {props.main}
       </div>
     )
-  } 
-
-//     return(
-//       <div>
-//         {headerBody}
-//       </div>
-//     )
-// }
+  }
   
   export default Header;

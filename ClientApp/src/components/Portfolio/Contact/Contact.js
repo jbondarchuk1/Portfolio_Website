@@ -23,7 +23,7 @@ function Contact () {
 
         axios({
             method: 'post',
-            url: 'https://localhost:44300/Contact',
+            url: '/Contact', 
             data: form_data,
             headers: {'Content-Type': 'multipart/form-data' }
             })
