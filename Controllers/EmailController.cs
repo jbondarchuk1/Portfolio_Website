@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Net;
 using System.Net.Mail;
+using DotNetEnv;
 
 namespace PersonalWebsite.Net.Controllers
 {
+    
     [Route("/Contact")]
     public class EmailController : ControllerBase
     {
@@ -32,9 +34,10 @@ namespace PersonalWebsite.Net.Controllers
         //  async Task
         static void Execute(string Name, string EmailAddress, string Subject, string Message)
         {
-
+            Dictionary<string, string> envVariables = Env.Load().ToDictionary();
+            
             var fromAddress = new MailAddress("jason.r.bondarchuk@gmail.com", "To Name");
-            const string fromPassword = "wcggpzdfbzwdtwxi";
+            string fromPassword = envVariables["frompassword"];
             string subject = "Subject";
             string body = $"Name: {Name}\n" +
                                     $"Email: {EmailAddress}\n" +
