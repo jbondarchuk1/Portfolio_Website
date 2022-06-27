@@ -49,27 +49,30 @@ function Contact () {
         return (
         <div className='contact'>
             <div className="login-box">
-            <h2>CONTACT</h2>
+                <h2>CONTACT</h2>
 
-            <form method='POST' action='/Contact' onSubmit={handleSubmit} Id="form">
-                <div className="user-box">
-                    <input type="text" name="Name" required="true" onChange={handleChange} />
-                    <label>Name</label>
-                </div>
-                <div className="user-box">
-                    <input type="text" name="EmailAddress" required="true" onChange={handleChange} />
-                    <label>Email address</label>
-                </div>
-                <div className="user-box">
-                    <input type="text" name="Subject" required="true" onChange={handleChange} />
-                    <label>Subject</label>
-                </div>
-                <div className="user-box">
-                    <textarea rows="4" cols="40" name="Message" required="true" onChange={handleChange}></textarea>
-                    <label>Message</label>
-                </div>
-                <input type='submit' id='a'/>
-            </form>
+
+                <form method='POST' action='/Contact' onSubmit={handleSubmit} Id="form">
+                    <div className="user-box">
+                        <input type="text" name="Name" required="true" onChange={handleChange} />
+                        <label>Name</label>
+                    </div>
+                    <div className="user-box">
+                        <input type="text" name="EmailAddress" required="true" onChange={handleChange} />
+                        <label>Email address</label>
+                    </div>
+                    <div className="user-box">
+                        <input type="text" name="Subject" required="true" onChange={handleChange} />
+                        <label>Subject</label>
+                    </div>
+                    <div className="user-box">
+                        <textarea rows="4" cols="40" name="Message" required="true" onChange={handleChange}></textarea>
+                        <label>Message</label>
+                    </div>
+                    <input type='submit' id='a'/>
+                </form>
+                <h4><br/><br/>MY EMAIL<br/><br/></h4>
+                <a href="mailto:jason.r.bondarchuk@gmail.com"><h4>jason.r.bondarchuk@gmail.com</h4></a>
             </div>
         </div>
         )

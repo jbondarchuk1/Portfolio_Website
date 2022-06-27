@@ -15,7 +15,7 @@ function Header(props) {
             <div className={classForHeader[0][0]}>
               <h1 className={classForHeader[0][1]}>JASON BONDARCHUK</h1><br/><br /> <br />
               <p className={classForHeader[0][2]}>
-                  Self-taught software developer <br />just trying to make an impact in the world<br/><br/>
+                  Software Engineer from New York <br />and MSCS candidate at Johns Hopkins University.<br />Just trying to make an impact in the world.<br/><br/>
                   自分でコーディングと日本語を勉強してる。<br />いつか、僕の夢は現実になる。
               </p>
           </div>

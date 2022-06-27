@@ -40,7 +40,7 @@
     height: 50px;
     float: right;
     margin: 0.5em 3em 0em 0em;
-    background-color: white;
+    background-color: transparent;
 }
   .nav-icon:after, 
   .nav-icon:before, 
@@ -116,8 +116,8 @@ transform: translateY(12px) rotate(135deg);
     transition: 0.3s;
     opacity: 0.95;
     text-align: right;
-    border-radius: 0 0 0 8px;
-    height: 20rem;
+    border-radius: 0 0 0 2px;
+    height: 21rem;
     width: 20rem;
     background-color: white;
     float: right;

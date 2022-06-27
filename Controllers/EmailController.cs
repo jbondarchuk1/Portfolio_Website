@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using System.Net;
 using System.Net.Mail;
 using DotNetEnv;
+using Microsoft.AspNetCore.Http;
 
 namespace PersonalWebsite.Net.Controllers
 {
@@ -18,18 +19,25 @@ namespace PersonalWebsite.Net.Controllers
         [HttpPost]
         public IActionResult Contact([Bind("Name, EmailAddress, Subject, Message")] Email email)
         {
-            if (email == null)
-            {
-                Debug.WriteLine("email is null");
+            try 
+            { 
+                if (email == null)
+                {
+                    Debug.WriteLine("email is null");
+                }
+                Debug.WriteLine($"Name: {email.Name}\n" +
+                                $"Email: {email.EmailAddress}\n" +
+                                $"Subject: {email.Subject}\n" +
+                                $"Message: {email.Message}\n");
+
+                Execute(email.Name, email.EmailAddress, email.Subject, email.Message); //.Wait();
+
+                return Redirect("/");
             }
-            Debug.WriteLine($"Name: {email.Name}\n" +
-                            $"Email: {email.EmailAddress}\n" +
-                            $"Subject: {email.Subject}\n" +
-                            $"Message: {email.Message}\n");
-
-            Execute(email.Name, email.EmailAddress, email.Subject, email.Message); //.Wait();
-
-            return Redirect("/");
+            catch(Exception ex)
+            {
+                return StatusCode(500,ex.Message);
+            }
         }
         //  async Task
         static void Execute(string Name, string EmailAddress, string Subject, string Message)
